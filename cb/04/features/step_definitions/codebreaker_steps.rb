@@ -14,7 +14,7 @@ When /^I start a new game$/ do
   @message = game.start
 end
 
-Then /^I should see "(.*)" $/ do |message|
+Then /^I should see "(.*)"$/ do |message|
 	@message.should == message
 end
 
