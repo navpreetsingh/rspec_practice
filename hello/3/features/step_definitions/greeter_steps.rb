@@ -6,3 +6,15 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
+
+Given /^ a greeter $/ do
+	@greeter = CucumberGreeter.new
+end
+
+When /^ I send it the greet message $/ do
+	@message = @greeter.new
+end
+
+Then /^ I should see "(.*?)" $/ do |greeting|
+	@message.should == greeting
+end
