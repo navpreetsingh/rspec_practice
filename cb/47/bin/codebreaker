@@ -14,8 +14,11 @@ game = Codebreaker::Game.new(STDOUT)
 secret_code = generate_secret_code
 at_exit { puts "\n***\nThe secret code was: #{secret_code}\n***" }
 game.start(secret_code)
+
 #END_HIGHLIGHT
 while guess = gets.chomp
   game.guess(guess)
 end
 
+=H19+I19-$G$19
+=H19*$E$18

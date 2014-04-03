@@ -23,21 +23,33 @@ module Codebreaker
     	mark = ""
         (0..3).each do |index|
             if exact_match?(guess, index)
-    		  mark << "+"
+    		  mark << "+"              
             elsif number_match?(guess, index) 
                 mark << "-"
             end
-
     	end    	
     	@output.puts mark.split("").sort.join
     end    
     def exact_match?(guess, index)
-        guess[index] == @secret[index]
+        guess[index] == @secret[index]        
     end
-    def number_match?(guess, index)
-        value = guess[index]        
-        @secret.include?(guess[index]) && !exact_match?(guess, index) && @secret.count(value) >= guess.count(value)
-
+    def number_match?(guess, index) 
+        value = guess[index]
+        if @secret.include?(value)        
+            sc = @secret.count(value)
+            i = 0
+            gc = guess.count(value) 
+            return true if sc >= gc                         
+            (index+1..3).each do |ind|
+                if exact_match?(guess, ind) 
+                    i += 1
+                    return false if(sc == i)
+                end
+                gc -= 1 if guess[ind] == value                
+            end
+            return false if gc > sc || gc == 0
+            return true
+        end
     end
   end
 end
