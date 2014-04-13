@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140412114211) do
+ActiveRecord::Schema.define(:version => 20140413110546) do
 
   create_table "examples", :force => true do |t|
     t.string   "title"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20140412114211) do
   end
 
   create_table "genres_movies", :id => false, :force => true do |t|
-    t.integer  "genre_id"
     t.integer  "movie_id"
+    t.integer  "genre_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

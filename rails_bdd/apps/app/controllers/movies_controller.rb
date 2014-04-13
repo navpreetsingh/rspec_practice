@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   def index
-  	debugger
-  	puts"g"
+  	
   end
 
   def new
@@ -10,8 +9,10 @@ class MoviesController < ApplicationController
   end
 
   def create
-  	Movie.create!(params[:movie].merge(:genres => Genre.find(params[:genres])))
-  	redirect_to movies_path
+    debugger
+  	Movie.create!(params[:movie])
+    GenresMovie.create!(:genre_id => params[:genres], :movie_id => Movie.last.id)
+    redirect_to movies_path
   end
 
   def show

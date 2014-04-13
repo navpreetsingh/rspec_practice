@@ -6,6 +6,6 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
-Given /^a hotel with "([^"]*)" rooms and "([^"]*)" bookings$/ do
-  |room_count, booking_count|
-end
+Given /^a hotel with "([^"]*)" rooms and "([^"]*)" bookings$/ do |room_count, booking_count|
+
+end	
