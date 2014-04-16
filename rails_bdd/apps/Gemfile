@@ -9,9 +9,15 @@ group :development , :test do
 	gem "mysql", '2.8.1' 
 	# gem "mysql2", '0.2.18'
 	#gem 'activerecord-sqlite3-adapter'
+	gem "launchy"
 	gem "rspec-rails", ">= 2.0.0"
 	gem "cucumber-rails", ">= 0.3.2", :require => false
 	gem "webrat", ">= 0.7.2"
+	gem "capybara" 
+	gem 'database_cleaner', github: 'bmabey/database_cleaner'
+	gem "selenium-client", ">= 1.2.18"
+	gem "Selenium"
+	gem "selenium-webdriver", '~> 2.41.0'
 end
 
 
@@ -32,7 +38,7 @@ gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'database_cleaner', github: 'bmabey/database_cleaner'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

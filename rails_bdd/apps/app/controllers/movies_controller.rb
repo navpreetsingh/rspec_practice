@@ -8,10 +8,12 @@ class MoviesController < ApplicationController
   	@genres = Genre.all
   end
 
-  def create
-    debugger
+  def create   
+      
   	Movie.create!(params[:movie])
-    GenresMovie.create!(:genre_id => params[:genres], :movie_id => Movie.last.id)
+    params[:genres].each do |g|
+      GenresMovie.create!(:genre_id => g.to_i, :movie_id => Movie.last.id)
+    end
     redirect_to movies_path
   end
 

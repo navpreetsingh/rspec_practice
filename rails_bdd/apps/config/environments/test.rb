@@ -34,4 +34,8 @@ Apps::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.selenium_server_address = '127.0.0.1' if RbConfig::CONFIG['host_os'] =~ /mingw|mswin/
+
+  
 end

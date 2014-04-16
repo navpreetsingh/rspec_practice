@@ -1,4 +1,10 @@
 Apps::Application.routes.draw do
+  get "genres", to: "genres#index"
+
+  get "genres/show"
+
+  resources :genres
+
   resources :examples
 
   get "movies", to: "movies#index"
