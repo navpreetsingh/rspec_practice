@@ -99,6 +99,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mainline (1.0.1)
+      rack
     mime-types (1.25.1)
     mini_portile (0.5.3)
     multi_json (1.9.2)
@@ -215,6 +217,7 @@ DEPENDENCIES
   jquery-rails (= 3.0.4)
   jquery-ui-rails
   launchy
+  mainline
   mysql (= 2.8.1)
   pg (= 0.15.1)
   rails (= 3.2.3)

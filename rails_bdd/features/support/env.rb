@@ -5,9 +5,7 @@
 # files.
 
 require 'cucumber/rails'
-require "selenium-webdriver"
-Selenium::WebDriver::Firefox::Binary.path='/home/navpreet/Downloads/firefox/firefox-bin'
-
+require 'rspec/expectations'
 
 
 # Capybara defaults to CSS3 selectors rather than XPath.
@@ -40,20 +38,15 @@ rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
-
- # require 'capybara/cucumber' commented out because it doesn't want to work with it in
-    Capybara.default_driver = :selenium
-    Capybara.default_selector = :css
-
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
 #
-#   Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
-#     # { :except => [:widgets] } may not do what you expect here
-#     # as Cucumber::Rails::Database.javascript_strategy overrides
-#     # this setting.
-#     DatabaseCleaner.strategy = :truncation
-#   end
+  # Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
+  #   # { :except => [:widgets] } may not do what you expect here
+  #   # as Cucumber::Rails::Database.javascript_strategy overrides
+  #   # this setting.
+  #   DatabaseCleaner.strategy = :truncation
+  # end
 #
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
